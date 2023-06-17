@@ -1,0 +1,15 @@
+@use "../../styles/global/index" as *;
+
+.team-page {
+
+  &__content {
+    padding: 10rem 0;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 33rem);
+    gap: 5rem;
+    justify-content: center;
+  }
+}

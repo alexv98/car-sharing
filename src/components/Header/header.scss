@@ -1,0 +1,115 @@
+@use "../../styles/global/index" as *;
+
+.header {
+  width: 100%;
+  height: 97vh;
+  background-color: $bg-gray;
+
+  &__content {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    @media (max-width: 800px) {
+      justify-content: center;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    z-index: 3;
+    max-width: 50rem;
+    margin-top: 5rem;
+
+    @media (max-width: 800px) {
+      text-align: center;
+      align-items: center;
+    }
+
+    h4 {
+      font-size: $h4-size;
+      font-family: $text-font;
+      color: $text-black;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: $h1-size;
+      font-family: $titles-font;
+      font-weight: 700;
+      color: $text-black;
+      line-height: 1.2;
+      margin-bottom: 2.3rem;
+
+      span {
+        color: $text-orange;
+      }
+    }
+
+    p {
+      font-size: $p-size;
+      font-family: $text-font;
+      line-height: 1.6;
+      color: $text-gray;
+      margin-bottom: 4rem;
+    }
+  }
+
+
+  &__buttons {
+    display: flex;
+    gap: 2rem;
+
+    @media (max-width: 450px) {
+      flex-direction: column;
+    }
+  }
+
+  &__btn {
+    font-weight: 700;
+    padding: 1.5rem 3rem;
+
+    @media (max-width: 450px) {
+      padding: 1.8rem 8rem;
+    }
+  }
+
+  &__car-img {
+    width: 65%;
+    margin-top: 5rem;
+    position: absolute;
+    right: 0;
+    z-index: 2;
+
+    @media (max-width: 800px) {
+      display: none;
+    }
+  }
+}
+
+.bg-shape {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+
+  @media (max-width: 800px) {
+    display: none;
+  }
+}
+
+.scroll-btn {
+  position: fixed;
+  bottom: 5rem;
+  right: 5rem;
+  font-size: 2.5rem;
+  color: white;
+  background-color: $text-orange;
+  border: 3px solid white;
+  z-index: 20;
+  padding: .2rem 1rem;
+  cursor: pointer;
+}

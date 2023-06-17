@@ -1,0 +1,49 @@
+@use "../../styles/global/index" as *;
+
+.button {
+  cursor: pointer;
+  color: white;
+  font-size: 1.6rem;
+  font-family: $text-font;
+  font-weight: 500;
+  border: none;
+  outline: none;
+
+  &--transition {
+    color: $text-black;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $text-orange;
+    }
+  }
+
+  &--black {
+    background-color: $text-black;
+    padding: 1.8rem 3rem;
+    border-radius: 0.3rem;
+    border: 2px solid $text-black;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: transparent;
+      color: $text-black;
+    }
+  }
+
+  &--orange {
+    background-color: $text-orange;
+    padding: 1.5rem 3rem;
+    border: 2px solid $text-orange;
+    border-radius: .3rem;
+    box-shadow: 0 10px 15px 0 rgb(255 83 48 / 35%);
+    transition: all 0.3s;
+
+
+    &:hover {
+      box-shadow: 0 10px 15px 0 rgb(255 83 48 / 50%);
+      background-color: #fa4226;
+    }
+
+  }
+}

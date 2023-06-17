@@ -1,0 +1,106 @@
+@use "../../styles/global/index" as *;
+
+.faq {
+  padding: 10rem 0;
+  background-image: url("../../assets/images/faq/car.png");
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: 0 70%;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    text-align: center;
+    max-width: 80rem;
+    line-height: 1.5;
+    margin-bottom: 7rem;
+    margin-right: auto;
+    margin-left: auto;
+
+    h5 {
+      font-size: $h4-size;
+    }
+
+    h2 {
+      font-size: $h2-size;
+      margin-bottom: 1.7rem;
+    }
+
+    p {
+      font-size: $p-size;
+      color: $text-gray;
+    }
+  }
+
+  &__questions {
+
+  }
+}
+
+.question {
+  color: $text-black;
+  background-color: white;
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.1);
+  width: 80rem;
+  cursor: pointer;
+
+  @media (max-width: 850px) {
+    width: 100%;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 6px 0 rgb(0 0 0 / 10%);
+    padding: 1.8rem 4.5rem;
+    transition: 0.15s ease;
+
+    p {
+      font-size: 1.8rem;
+      font-weight: 500;
+    }
+
+    i {
+      font-size: 2rem;
+    }
+  }
+
+  &__body {
+    font-size: $p-size;
+    font-family: $text-font;
+    color: $text-gray;
+    line-height: 1.7;
+    padding: 0 4rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.4s ease;
+  }
+}
+
+.active {
+  transition: 0.4s ease;
+
+  .question__title {
+    background-color: $text-orange;
+    color: white;
+    box-shadow: 0 10px 15px 0 rgb(255 83 48 / 35%);
+  }
+
+  .question__body {
+    padding: 4rem;
+    max-height: 20rem;
+
+    @media (max-width: 550px) {
+      max-height: 30rem;
+    }
+
+    @media (max-width: 420px) {
+      max-height: 55rem;
+    }
+  }
+}

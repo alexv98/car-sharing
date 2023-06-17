@@ -1,0 +1,397 @@
+@use "../../styles/global/index" as *;
+
+.order {
+  position: relative;
+  background: linear-gradient(to bottom, $bg-gray 20%, $bg-white 80%);
+  margin-bottom: 15rem;
+
+  &__content {
+    width: 100%;
+    padding: 4rem 5rem;
+    background-color: $bg-white;
+    background-image: url("../../assets/images/book-car/book-bg.png");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px 0 rgb(0 0 0 / 10%);
+    position: relative;
+    z-index: 3;
+    margin: 0 auto;
+
+  }
+
+  &__title {
+    font-size: $h3-size;
+    font-weight: 700;
+    margin-bottom: 2.7rem;
+  }
+}
+
+.car-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 2rem;
+
+  b {
+    color: $text-orange;
+  }
+
+  @media (max-width: 1000px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 630px) {
+    grid-template-columns: 1fr;
+  }
+
+  &__type {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      font-size: $p-size;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+
+      i {
+        color: $text-orange;
+      }
+    }
+
+    select {
+      font-size: 1.5rem;
+      color: #ababab;
+      font-family: $text-font;
+      border: 1px solid #ccd7e6;
+      border-radius: 3px;
+      font-weight: 400;
+      padding: 1.2rem 1rem;
+      outline: none;
+    }
+  }
+
+  &__time {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    input {
+      outline: none;
+      color: #878585;
+      padding-right: 1rem;
+      border: 1px solid #ccd7e6;
+    }
+
+    label {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+
+      i {
+        color: $text-orange;
+      }
+    }
+
+    ::-webkit-datetime-edit {
+      padding: 1.3rem 1.3rem;
+    }
+
+    ::-webkit-calendar-picker-indicator {
+      cursor: pointer;
+      font-size: 1.6rem;
+    }
+  }
+
+  &__button {
+    padding: 1rem 1rem;
+    align-self: self-end;
+    font-size: 1.8rem;
+  }
+}
+
+.modal-overlay {
+  display: block;
+  opacity: 1;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 99;
+  top: 0;
+  right: 0;
+}
+
+.order-modal {
+  width: 83rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  color: $text-black;
+  z-index: 999;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border: 2px solid white;
+  padding-right: .2rem;
+
+  @media (max-width: 800px) {
+    width: 100%;
+  }
+
+  @media (max-width: 650px) {
+    top: 50%;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    background-color: $text-orange;
+    color: white;
+    align-items: center;
+
+    h2 {
+      font-size: $h3-size;
+      text-transform: uppercase;
+    }
+
+    i {
+      font-size: 2.5rem;
+      color: rgba(255, 255, 255, 0.919);
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  &__message {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem 3rem;
+    background-color: #ffeae6;
+
+    h4 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: $text-orange;
+
+      i {
+        font-size: 2.5rem;
+      }
+    }
+
+    p {
+      font-size: 1.7rem;
+      color: #777777;
+      font-weight: 500;
+      line-height: 1.6;
+    }
+  }
+}
+
+.car-info {
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  border-bottom: 1px solid #7777779f;
+  gap: 2rem 0;
+
+  @media (max-width: 650px) {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  h3 {
+    color: $text-orange;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+
+    span {
+      color: $text-black;
+    }
+  }
+
+  &__date {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__car {
+    img {
+      width: 100%;
+    }
+  }
+
+
+  &__item {
+    display: flex;
+    gap: 1rem;
+
+    @media (max-width: 650px) {
+      text-align: center;
+      justify-content: center;
+    }
+
+    > i {
+      font-size: 1.8rem;
+      padding-top: 0.2rem;
+      color: #777777;
+    }
+
+    > div {
+      h6 {
+        font-size: 1.5rem;
+        margin-bottom: 0.2rem;
+      }
+
+      p {
+        font-size: $p-size;
+        color: #777777;
+
+        input {
+          text-align: center;
+          width: 8rem;
+          font-size: 14px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.client-info {
+  padding: 3rem;
+
+  > h4 {
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    color: $text-orange;
+    margin-bottom: 2rem;
+  }
+
+  &__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__col-1,
+  &__col-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 1rem 0;
+
+    @media (max-width: 650px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__col-1 {
+    grid-template-columns: 1fr !important;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+
+    label {
+      font-size: $p-size;
+      font-weight: 500;
+      color: #777777;
+
+      b {
+        color: $text-orange;
+      }
+    }
+
+    input {
+      padding: 14px 15px;
+      background-color: #dbdbdb;
+      color: #555;
+      font-size: 1.5rem;
+      font-weight: 500;
+      outline: none;
+      border: none;
+    }
+  }
+
+  &__checkbox {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-size: $p-size;
+    color: #565454;
+    margin-bottom: 3rem;
+  }
+
+  &__footer {
+    background-color: #dbdbdb;
+    padding: 3rem;
+    margin: 0 -3rem;
+    text-align: right;
+
+    @media (max-width: 650px) {
+      text-align: center;
+    }
+  }
+
+  &__btn-submit {
+    font-size: 2rem;
+  }
+}
+
+.required-field {
+  color: $text-orange;
+}
+
+.error-message {
+  color: #721c24;
+  background-color: #f8d7da;
+  padding: 1rem 1.4rem;
+  margin-bottom: 1.8rem;
+  margin-top: -1rem;
+  border: 1px solid transparent;
+  border-radius: 0.8rem;
+  font-size: $p-size;
+  font-weight: 500;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  i {
+    cursor: pointer;
+  }
+}
+
+.success-message {
+  color: #2a6817;
+  background-color: #c3fabe;
+  padding: 1rem 1.4rem;
+  margin-bottom: 1.8rem;
+  margin-top: -1rem;
+  border: 1px solid transparent;
+  border-radius: 0.8rem;
+  font-size: $p-size;
+  font-weight: 500;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  i {
+    cursor: pointer;
+  }
+}

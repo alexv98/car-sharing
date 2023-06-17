@@ -1,0 +1,73 @@
+@use "../../styles/global/index" as *;
+
+.model-card {
+  width: 35rem;
+  border: 1px solid #d5d5d5;
+  border-radius: 0.3rem;
+
+  img {
+    width: 100%;
+    height: 26rem;
+  }
+
+  &__content {
+    padding: 2rem 3rem;
+    color: $text-black;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2.8rem;
+    font-weight: 700;
+  }
+
+  &__subtitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    i {
+      font-size: 1.4rem;
+      color: #ffc933;
+    }
+    p {
+      font-size: $p-size;
+    }
+  }
+
+  &__features {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    span {
+      color: #777777;
+      font-size: 1.8rem;
+      font-weight: 500;
+    }
+    i {
+      color: black;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    &:last-child {
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #c6c6c6;
+    }
+  }
+
+  a {
+    display: block;
+    padding: 0 2rem 2rem 2rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 2rem 3rem;
+  }
+
+}

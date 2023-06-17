@@ -1,0 +1,88 @@
+@use '../../styles/global/index' as *;
+
+.about {
+  margin-top: 10rem;
+
+  &__content {
+    max-width: 90rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: flex-end;
+    gap: 5rem;
+    margin-bottom: 15rem;
+
+    img {
+       width: 43rem;
+       height: 44rem;
+     }
+
+    @media (max-width: 950px) {
+      flex-direction: column;
+      align-items: center;
+      max-width: 70rem;
+    }
+
+
+  }
+
+  &__text {
+    color: $text-black;
+
+    h3 {
+      font-size: $h4-size;
+      font-family: $text-font;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: $h2-size;
+      line-height: 1.2;
+      margin-bottom: 2rem;
+    }
+
+    p {
+      font-size: $p-size;
+      color: $text-gray;
+      font-family: $text-font;
+      line-height: 1.5;
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__boxes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__box {
+    max-width: 30%;
+
+    img {
+      width: 7rem;
+      height: 5rem;
+      margin-bottom: 1rem;
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      line-height: 1;
+
+      @media (max-width: 450px) {
+        flex-direction: column;
+      }
+
+      h4 {
+        font-size: 5rem;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+}

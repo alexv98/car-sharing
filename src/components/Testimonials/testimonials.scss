@@ -1,0 +1,108 @@
+@use "../../styles/global/index" as *;
+
+.testimonials {
+  background-color: $bg-gray;
+  padding: 10rem 0;
+  color: $text-black;
+  width: 100%;
+
+  &__content {
+
+  }
+
+  &__title {
+    text-align: center;
+    max-width: 70rem;
+    margin-bottom: 7rem;
+    margin-right: auto;
+    margin-left: auto;
+
+    h4 {
+      font-size: $h4-size;
+      font-family: $text-font;
+      font-weight: 500;
+    }
+
+    h2 {
+      font-size: $h2-size;
+      margin-bottom: 1.4rem;
+    }
+
+    p {
+      font-size: $p-size;
+      font-family: $text-font;
+      color: $text-gray;
+      line-height: 1.4;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    gap: 3rem;
+    width: 100%;
+    justify-content: center;
+
+    @media (max-width: 800px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 0 20px 40px 0 rgb(0 0 0 / 8%);
+    max-width: 54rem;
+    width: 100%;
+    padding: 5.5rem;
+
+    @media (max-width: 1000px) {
+      padding: 5rem 3rem;
+    }
+
+    p {
+      font-size: $h4-size;
+      font-weight: 500;
+      margin-bottom: 2rem;
+    }
+
+    &__wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__user {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+
+      img {
+        width: 7rem;
+        height: 7rem;
+        border-radius: 50%;
+      }
+
+      h4 {
+        font-size: 1.8rem;
+      }
+
+      p {
+        font-size: $p-size;
+        font-family: $text-font;
+        font-weight: 400;
+      }
+    }
+
+    &__quotes-icon {
+      font-size: 6.2rem;
+      color: $text-orange;
+
+      @media (max-width: 470px) {
+        display: none;
+      }
+    }
+  }
+}

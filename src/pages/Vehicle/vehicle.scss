@@ -1,0 +1,19 @@
+@use '../../styles/global/index' as *;
+
+.vehicle {
+  width: 100%;
+  margin: 0 auto;
+  padding: 10rem 0;
+
+  &__content {
+    width: 100%;
+    //padding: 0 5rem;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 35rem);
+    justify-content: center;
+    gap: 3rem;
+  }
+}
